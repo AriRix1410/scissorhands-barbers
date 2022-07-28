@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -96,7 +96,6 @@ WSGI_APPLICATION = 'scissorhands.wsgi.application'
 DATABASES = {
    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 
 # Password validation

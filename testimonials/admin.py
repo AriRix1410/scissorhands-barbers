@@ -4,6 +4,7 @@ from .models import Testimononial
 
 # Register your models here.
 
+
 @admin.register(Testimononial)
 class TestimonialAdmin(SummernoteModelAdmin):
 
