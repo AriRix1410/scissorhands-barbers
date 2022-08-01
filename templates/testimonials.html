@@ -32,14 +32,8 @@
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Make A Booking</a></li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
-                        {% else %}
-                        <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -47,8 +41,16 @@
 
         <main class="flex-shrink-0 main-bg">
             {% block content %}
-            <!-- Content Goes here -->
-            {% endblock content %}
+
+            <!-- Masthead-->
+            <header class="masthead">
+                <div class="container">
+                    <div class="masthead-subheading">Welcome To Scissorhand's Barbershop</div>
+                    <div class="masthead-heading text-uppercase">High standards are on us.</div>
+                    <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Enjoy our service</a> -->
+                </div>
+            </header>
+            {%endblock%}
         </main>
 
         <!-- Footer-->
