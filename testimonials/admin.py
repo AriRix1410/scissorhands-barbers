@@ -8,7 +8,7 @@ from .models import Testimononial
 @admin.register(Testimononial)
 class TestimonialAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'created_on')
+    list_display = ('name', 'title', 'content', 'created_on')
     search_fields = ['title', 'name', 'content']
     list_filter = ('approved', 'created_on')
     summernote_fields = ('content',)

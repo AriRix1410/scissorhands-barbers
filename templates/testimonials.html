@@ -7,24 +7,24 @@
             <header class="masthead">
                 <div class="container">
                     <div class="masthead-subheading">What do our clients say about us?</div>
-                    <div class="masthead-heading text-uppercase">Scroll down and find out</div>
+                    <div class="masthead-heading text-uppercase">See for yourself</div>
                     <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Enjoy our service</a> -->
                 </div>
             </header>
             <section class="page-section">
                 <div class="container">
                     <div class="row">
-                        {% for testimonial in testimonials %}
+                        {% for data in list_data %}
                             <div class="col-md-12 col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h3 class="card-title">{{ testimonial.title }}</h3>
+                                        <h3 class="card-title">{{ data.title }}</h3>
                                         <hr />
-                                        <p class="card-text">{{ testimonial.comment }}</p>
+                                        <p class="card-text">{{ data.content|safe }}</p>
                                         <hr />
-                                        <p class="card-text">{{ testimonial.name }}</p>
+                                        <p class="card-text">{{ data.name }}</p>
                                         <hr />
-                                        <p class="card-text text-muted h6">{{ testimonial.created_on }}</p>
+                                        <p class="card-text text-muted h6">{{ data.created_on }}</p>
                                     </div>
                                 </div>
                             </div>
