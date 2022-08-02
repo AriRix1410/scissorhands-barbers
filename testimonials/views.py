@@ -8,5 +8,6 @@ from .models import Testimononial
 
 class TestimonialList(generic.ListView):
     model = Testimononial
-    queryset = Testimononial.objects.filter(status=1).order_by("-created_on")
+    queryset = Testimononial.objects.filter(approved=True).order_by("-created_on")
     template_name = 'testimonials.html'
+    paginate_by = 6
