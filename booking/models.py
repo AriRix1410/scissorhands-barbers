@@ -11,6 +11,19 @@ SERVICES = (
         ('Shave Only', 'Shave Only'),
         )
 
+TIME_SLOTS = (
+        ('9.00 - 9.30', '9.00 - 9.30'),
+        ('9.30 - 10.00', '9.30 - 10.00'),
+        ('10.00 - 10.30', '10.00 - 10.30'),
+        ('10.30 - 11.00', '10.30 - 11.00'),
+        ('11.00 - 11.30', '11.00 - 11.30'),
+        ('11.30 - 12.00', '11.30 - 12.00'),
+        ('12.00 - 12.30', '12.00 - 12.30'),
+        ('13.00 - 13.30', '13.00 - 13.30'),
+        ('13.30 - 14.00', '13.30 - 14.00'),
+        ('14.00 - 14.30', '14.00 - 14.30'),
+        )
+
 BARBER_NAME = (
         ('Nathan', 'Nathan'),
         ('Chris', 'Chris'),
@@ -19,37 +32,12 @@ BARBER_NAME = (
         )
 
 
-class Customer(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, null=True)
-    phone_number = PhoneNumberField()
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.name
-
-
-# class Barber(models.Model):
-#     SERVICES = (
-#         ('Gents Cut', 'Gents Cut'),
-#         ('Kids Cut', 'Kids Cut'),
-#         ('Cut and Shave', 'Cut and Shave'),
-#         ('Shave Only', 'Shave Only'),
-#         )
-#     barbername = models.CharField(max_length=50, null=True)
-#     service = models.CharField(max_length=50, null=True, choices=SERVICES)
-
-#     def __str__(self):
-#         return self.barbername
-
-
 class Booking(models.Model):
     date = models.DateField()
-    time = models.TimeField()
+    time = models.CharField(max_length=50, null=True, choices=TIME_SLOTS)
     barber = models.CharField(max_length=50, null=True, choices=BARBER_NAME)
     service = models.CharField(max_length=50, null=True, choices=SERVICES)
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.customer} has booked {self.service} on {self.date} at {self.time} with {self.barber}"
-

@@ -7,8 +7,8 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <div class="masthead-subheading">What do our clients say about us?</div>
-        <div class="masthead-heading text-uppercase">See for yourself</div>
+        <!-- <div class="masthead-subheading">Would you like to make a booking?</div> -->
+        <div class="masthead-heading text-uppercase">Make a booking</div>
         <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Enjoy our service</a> -->
     </div>
 </header>
@@ -18,11 +18,11 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
 
-                <h3 class="section-heading text-uppercase button-center">Write a testimonial</h3>
+                <h3 class="section-heading text-uppercase button-center">Make a booking</h3>
                 <form method="post">
                     {{ form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary btn-lg btn-form">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-form">Confirm</button>
                 </form>
                 {% endif %}
             </div>
