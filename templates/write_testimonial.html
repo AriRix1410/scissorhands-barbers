@@ -13,16 +13,16 @@
                 </div>
             </header>
             <div class="section">
-                <div class="row">
+                <div class="row button-center">
                     <div class="col-md-4 card mb-4  mt-3 ">
                         <div class="card-body">
                             {% if user.is_authenticated %}
             
-                            <h3>Write a testimonial:</h3>
+                            <h3 class="section-heading text-uppercase button-center">Write a testimonial</h3>
                             <form method="post">
                                 {{ form | crispy }}
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-form">Submit</button>
                             </form>
                             {% endif %}
                         </div>
