@@ -22,4 +22,4 @@ def make_booking(request):
     else:
         form = BookingForm()
 
-    return render(request, '/bookings.html', {'form': form })
+    return render(request, 'bookings.html', {'form': form })

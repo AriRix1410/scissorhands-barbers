@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -12,16 +14,15 @@ SERVICES = (
         )
 
 TIME_SLOTS = (
-        ('9.00 - 9.30', '9.00 - 9.30'),
-        ('9.30 - 10.00', '9.30 - 10.00'),
-        ('10.00 - 10.30', '10.00 - 10.30'),
-        ('10.30 - 11.00', '10.30 - 11.00'),
-        ('11.00 - 11.30', '11.00 - 11.30'),
-        ('11.30 - 12.00', '11.30 - 12.00'),
-        ('12.00 - 12.30', '12.00 - 12.30'),
-        ('13.00 - 13.30', '13.00 - 13.30'),
-        ('13.30 - 14.00', '13.30 - 14.00'),
-        ('14.00 - 14.30', '14.00 - 14.30'),
+        ('9.00 - 10.00', '9.00 - 10.00'),
+        ('10.00 - 11.00', '10.00 - 11.00'),
+        ('11.00 - 12.00', '11.00 - 12.00'),
+        ('12.00 - 13.00', '12.00 - 13.00'),
+        ('13.00 - 14.00', '13.00 - 14.00'),
+        ('14.00 - 15.00', '14.00 - 15.00'),
+        ('15.00 - 16.00', '15.00 - 16.00'),
+        ('16.00 - 17.00', '16.00 - 17.00'),
+        ('17.00 - 18.00', '17.00 - 18.00'),
         )
 
 BARBER_NAME = (
@@ -33,7 +34,7 @@ BARBER_NAME = (
 
 
 class Booking(models.Model):
-    date = models.DateField()
+    date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
     time = models.CharField(max_length=50, null=True, choices=TIME_SLOTS)
     barber = models.CharField(max_length=50, null=True, choices=BARBER_NAME)
     service = models.CharField(max_length=50, null=True, choices=SERVICES)

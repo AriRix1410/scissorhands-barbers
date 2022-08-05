@@ -20,11 +20,15 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">{{ booking.date }}</h3>
-                            <hr />
-                            <p class="card-text">{{ booking.time }}</p>
-                            <hr />
-                            <p class="card-text">{{ booking.barber }}</p>
+                            {% if user.is_authenticated %}
+
+                            <h3 class="section-heading text-uppercase button-center">Make a Booking</h3>
+                            <form method="post">
+                                {{ form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary btn-lg btn-form">Submit</button>
+                            </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
