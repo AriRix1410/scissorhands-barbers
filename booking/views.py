@@ -17,9 +17,9 @@ def make_booking(request):
             booking_form = form.save(commit=False)
             booking_form.customer = request.user
             booking_form.save()
-            messages.success(request, ('Your testimonial is awaiting approval'))
+            messages.success(request, ('Your booking is awaiting confirmation'))
             return HttpResponseRedirect('/bookings')
     else:
         form = BookingForm()
 
-    return render(request, 'bookings.html', {'form': form })
+    return render(request, 'bookings.html', {'form': form})

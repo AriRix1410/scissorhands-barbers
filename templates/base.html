@@ -34,9 +34,9 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#location">Locate us</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'bookings' %}">Make A Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'bookings' %}">Bookings</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                     {% else %}

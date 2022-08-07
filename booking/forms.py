@@ -1,5 +1,4 @@
 from .models import Booking
-import datetime
 from django import forms
 
 

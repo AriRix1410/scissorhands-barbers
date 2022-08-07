@@ -8,8 +8,7 @@
 <header class="masthead">
     <div class="container">
         <!-- <div class="masthead-subheading">Would you like to make a booking?</div> -->
-        <div class="masthead-heading text-uppercase">Make a booking</div>
-        <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Enjoy our service</a> -->
+        <div class="masthead-heading text-uppercase">Bookings</div>
     </div>
 </header>
 <div class="section">
@@ -26,7 +25,7 @@
                             <form method="post">
                                 {{ form | crispy }}
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-primary btn-lg btn-form">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-form">Confirm</button>
                             </form>
                             {% endif %}
                         </div>

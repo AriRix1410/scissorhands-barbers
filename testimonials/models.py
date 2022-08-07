@@ -10,7 +10,6 @@ class Testimononial(models.Model):
     title = models.CharField(max_length=200, unique=True)
     name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="client_reviews")
-    updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)

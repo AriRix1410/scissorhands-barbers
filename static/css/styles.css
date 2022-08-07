@@ -220,18 +220,18 @@ header.masthead .masthead-heading {
   height: 2.75rem;
 }
 
-section#contact {
+section#location {
   background-color: #212529;
   background-image: url("../assets/img/map-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-section#contact .section-heading {
+section#location .section-heading {
   color: #fff;
 }
 
-section#contact form#contactForm .form-group {
+section#location form#contactForm .form-group {
   margin-bottom: 1.5rem;
 }
 
