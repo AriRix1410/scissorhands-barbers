@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -23,3 +24,15 @@ def make_booking(request):
         form = BookingForm()
 
     return render(request, 'bookings.html', {'form': form})
+
+
+@login_required
+def my_bookings(request):
+    if Booking.objects.filter(approved=True):
+        context = {}
+        booking_data = Booking.objects.filter(customer=User.objects.get(username=request.user)).order_by("-date")
+        context['booking_data'] = booking_data
+        return render(request, 'my_bookings.html', context)
+    else:
+        return "You have no available bookings"
+

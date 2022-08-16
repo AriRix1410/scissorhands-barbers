@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">My Bookings</div>
+    </div>
+</header>
+<section class="page-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">My confirmed bookings</h2>
+            <hr />
+        </div>
+        <div class="row button-center">
+            {% for bookings in booking_data %}
+            <div class="col-md-12 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ bookings.date }} at {{ bookings.time }}</h3>
+                        <hr />
+                        <p class="card-text">You have booked {{ bookings.service }}</p>
+                        <hr />
+                        <p class="card-text text-muted h6">With {{ bookings.barber }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr />
+        <div class="container">
+            <div class="button-center">
+                <div class="row">
+                    <p>If you'd like to send another booking request please click below</p>
+                    <a class="btn btn-primary btn-lg text-uppercase" name="bookings"
+                    href="{% url 'bookings' %}">Make a Booking</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

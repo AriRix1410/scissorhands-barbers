@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-STATUS = ((0, "Draft"), (1, "Submit"))
-
 
 class Testimononial(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -12,7 +10,6 @@ class Testimononial(models.Model):
         User, on_delete=models.CASCADE, related_name="client_reviews")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
 
     class Meta:

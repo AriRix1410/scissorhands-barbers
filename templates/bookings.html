@@ -7,46 +7,38 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <!-- <div class="masthead-subheading">Would you like to make a booking?</div> -->
         <div class="masthead-heading text-uppercase">Bookings</div>
     </div>
 </header>
 <div class="section">
     <section class="page-section">
         <div class="container">
-            <div class="row">
-                {% for booking in user.bookings %}
-                <div class="col-md-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            {% if user.is_authenticated %}
+            <div class="row button-center">
+                <div class="col-md-4 card mb-4  mt-3 ">
+                    <div class="card-body">
+                        {% if user.is_authenticated %}
 
-                            <h3 class="section-heading text-uppercase button-center">Make a Booking</h3>
-                            <form method="post">
-                                {{ form | crispy }}
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-primary btn-lg btn-form">Confirm</button>
-                            </form>
-                            {% endif %}
+                        <h3 class="section-heading text-uppercase button-center">Make a booking</h3>
+                        <form method="post">
+                            {{ form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-lg btn-form">Send Request</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+                <hr />
+                <div class="container">
+                    <div class="button-center">
+                        <div class="row">
+                            <p>If you've already sent a request and would like to view your confirmed bookings, please click below</p>
+                            <a class="btn btn-primary btn-lg text-uppercase" name="my_bookings"
+                            href="{% url 'my_bookings' %}">My Bookings</a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-    <div class="row button-center">
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-
-                <h3 class="section-heading text-uppercase button-center">Make a booking</h3>
-                <form method="post">
-                    {{ form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-primary btn-lg btn-form">Confirm</button>
-                </form>
-                {% endif %}
             </div>
         </div>
-    </div>
+    </section>
 </div>
 {%endblock%}
