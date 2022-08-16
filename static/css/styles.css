@@ -318,6 +318,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Testimonials */
 
+.card {
+  margin: 1.25rem;
+}
+
 .button-center {
   display: flex;
   align-items: center;

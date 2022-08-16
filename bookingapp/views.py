@@ -30,7 +30,8 @@ def make_booking(request):
 def my_bookings(request):
     if Booking.objects.filter(approved=True):
         context = {}
-        booking_data = Booking.objects.filter(customer=User.objects.get(username=request.user)).order_by("-date")
+        booking_data = Booking.objects.filter(customer=User.objects.get(
+            username=request.user)).order_by("date")
         context['booking_data'] = booking_data
         return render(request, 'my_bookings.html', context)
     else:
