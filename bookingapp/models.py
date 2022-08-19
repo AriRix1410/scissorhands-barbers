@@ -40,5 +40,8 @@ class Booking(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ["-date"]
+
     def __str__(self):
         return f"{self.customer} has booked {self.service} on {self.date} at {self.time} with {self.barber}"
