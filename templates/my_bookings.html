@@ -28,11 +28,16 @@
                             <hr />
                             <p class="card-text text-muted h6">With {{ bookings.barber }}</p>
                             <hr />
-                            <div class="row">
+                            <span>
                                 <a href="{% url 'edit_booking' bookings.id %}">
-                                    <button>Edit</button>
+                                    <button class="btn btn-primary btn-form text-uppercase">Edit</button>
                                 </a>
-                            </div>
+                            </span>
+                            <span>
+                                <a href="{% url 'cancel_booking' bookings.id %}">
+                                    <button class="btn btn-primary btn-form text-uppercase">Cancel</button>
+                                </a>
+                            </span>
                         </div>
                     </div>
                     {% endif %}

@@ -45,6 +45,7 @@ def edit_booking(request, booking_id):
         if form.is_valid():
             booking_form = form.save(commit=False)
             booking_form.customer = request.user
+            booking_form.approved = False
             booking_form.save()
             messages.success(request, ('Your booking is awaiting confirmation'))
             return redirect('my_bookings')
@@ -54,3 +55,9 @@ def edit_booking(request, booking_id):
     }
     return render(request, 'edit_booking.html', context)
 
+
+@login_required
+def cancel_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    booking.delete()
+    return redirect('my_bookings')

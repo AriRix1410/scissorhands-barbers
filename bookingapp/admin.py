@@ -13,6 +13,6 @@ class BookingAdmin(SummernoteModelAdmin):
     list_filter = ('approved',)
     actions = ['confirm_booking']
 
-    def confirm_comments(self, request, queryset):
+    def confirm_booking(self, request, queryset):
         queryset.update(approved=True)
 
