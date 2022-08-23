@@ -16,7 +16,8 @@ class TestimonialList(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        list_data = Testimononial.objects.filter(approved=True).order_by("-created_on")
+        list_data = Testimononial.objects.filter(
+            approved=True).order_by("-created_on")
         context['list_data'] = list_data
         return render(request, 'testimonials.html', context)
 
@@ -29,9 +30,10 @@ def write_testimonial(request):
             testimonial_form = form.save(commit=False)
             testimonial_form.name = request.user
             testimonial_form.save()
-            messages.success(request, ('Your testimonial is awaiting approval'))
+            messages.success(
+                request, ('Your testimonial is awaiting approval'))
             return HttpResponseRedirect('/testimonials')
     else:
         form = TestimonialForm()
 
-    return render(request, 'write_testimonial.html', {'form': form })
+    return render(request, 'write_testimonial.html', {'form': form})

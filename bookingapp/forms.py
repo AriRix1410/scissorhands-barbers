@@ -1,9 +1,6 @@
+import datetime
 from .models import Booking
 from django import forms
-
-
-class DatePicker(forms.DateInput):
-    input_type = 'date'
 
 
 class BookingForm(forms.ModelForm):
@@ -11,5 +8,5 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('date', 'time', 'barber', 'service',)
         widgets = {
-            'date': DatePicker(),
+            'date': forms.DateInput(attrs={'type': 'date', 'min': datetime.datetime.now().date()}),
         }
