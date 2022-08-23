@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 from .models import Testimononial
 from .forms import TestimonialForm
 
@@ -15,11 +16,17 @@ class TestimonialList(generic.ListView):
     paginate_by = 6
 
     def get(self, request, *args, **kwargs):
-        context = {}
-        list_data = Testimononial.objects.filter(
-            approved=True).order_by("-created_on")
-        context['list_data'] = list_data
-        return render(request, 'testimonials.html', context)
+        # context = {}
+        # list_data = Testimononial.objects.filter(
+        #     approved=True).order_by("-created_on")
+        # context['list_data'] = list_data
+
+        paginate = Paginator(Testimononial.objects.filter(
+            approved=True).order_by("-created_on"), 1)
+        page = request.GET.get('page')
+        lists = paginate.get_page(page)
+
+        return render(request, 'testimonials.html', {'lists':lists})
 
 
 @login_required()

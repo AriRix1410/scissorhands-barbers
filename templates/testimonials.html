@@ -14,17 +14,17 @@
 <section class="page-section">
     <div class="container">
         <div class="row button-center">
-            {% for data in list_data %}
+            {% for list in lists %}
             <div class="col-md-12 col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">{{ data.title }}</h3>
+                        <h3 class="card-title">{{ list.title }}</h3>
                         <hr />
-                        <p class="card-text">{{ data.content|safe }}</p>
+                        <p class="card-text">{{ list.content|safe }}</p>
                         <hr />
-                        <p class="card-text">{{ data.name }}</p>
+                        <p class="card-text">{{ list.name }}</p>
                         <hr />
-                        <p class="card-text text-muted h6">{{ data.created_on }}</p>
+                        <p class="card-text text-muted h6">{{ list.created_on }}</p>
                     </div>
                 </div>
             </div>
@@ -36,6 +36,33 @@
                     href="{% url 'write_testimonial' %}">Write Testimonial</a>
             </div>
         </div>
+        <div class="button-center">
+            <div class="pagination_rounded">
+                <ul>
+                    {% if lists.has_previous %}
+                    <li>
+                        <a href="?page={{ lists.previous_page_number }}" class="prev"> <i class="fa fa-angle-left"
+                                aria-hidden="true"></i> Prev </a>
+                    </li>
+                    {% endif %}
+
+
+                    {% for num in nums %}
+                    <li class="visible-xs"><a href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+
+                    {% endfor %}
+
+                    {% if lists.has_next %}
+                    <li><a href="?page={{ lists.next_page_number }}" class="next"> Next <i class="fa fa-angle-right"
+                                aria-hidden="true"></i></a>
+                    </li>
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
+
 {%endblock%}
