@@ -10,15 +10,18 @@
         <div class="masthead-heading text-uppercase">Bookings</div>
     </div>
 </header>
+
+<!-- Booking form -->
 <div class="section">
     <section class="page-section">
         <div class="container">
             <div class="row button-center">
                 <div class="col-md-4 card mb-4  mt-3 ">
                     <div class="card-body">
+                        <!-- Users must be logged in to request a booking -->
                         {% if user.is_authenticated %}
 
-                        <h3 class="section-heading text-uppercase button-center">Make a booking</h3>
+                        <h3 class="section-heading text-uppercase button-center">Request a booking</h3>
                         <form method="post">
                             {{ form | crispy }}
                             {% csrf_token %}
@@ -28,6 +31,8 @@
                     </div>
                 </div>
                 <hr />
+
+                <!-- Navigates to confirmed bookings page -->
                 <div class="container">
                     <div class="button-center">
                         <div class="row">

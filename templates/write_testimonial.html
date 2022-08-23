@@ -12,10 +12,13 @@
         <div class="masthead-heading text-uppercase">Testimonials</div>
     </div>
 </header>
+
+<!-- Testimonial Form -->
 <div class="section">
     <div class="row button-center">
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
+                <!-- Users must be logged in to write a testimonial -->
                 {% if user.is_authenticated %}
 
                 <h3 class="section-heading text-uppercase button-center">Write a testimonial</h3>
