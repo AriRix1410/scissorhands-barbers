@@ -12,25 +12,33 @@ from .forms import TestimonialForm
 
 
 class TestimonialList(generic.ListView):
+    '''
+    Gets testimonial objects from the testimonial models and renders them to
+    the testimonials page.
+    '''
     model = Testimononial
-    paginate_by = 6
 
     def get(self, request, *args, **kwargs):
-        # context = {}
-        # list_data = Testimononial.objects.filter(
-        #     approved=True).order_by("-created_on")
-        # context['list_data'] = list_data
+        '''
+        Gets only approved objects from the testimonial models and
+        renders the paginated lists to testimonials page.
+        '''
 
         paginate = Paginator(Testimononial.objects.filter(
-            approved=True).order_by("-created_on"), 1)
+            approved=True).order_by("-created_on"), 6)
         page = request.GET.get('page')
         lists = paginate.get_page(page)
 
-        return render(request, 'testimonials.html', {'lists':lists})
+        return render(request, 'testimonials.html', {'lists': lists})
 
 
 @login_required()
 def write_testimonial(request):
+    '''
+    Posts data to testimonials. If the submit is successful
+    then page redirects to testimonials page. Renders the 
+    write testimonials page.
+    '''
     if request.method == "POST":
         form = TestimonialForm(request.POST)
         if form.is_valid():
