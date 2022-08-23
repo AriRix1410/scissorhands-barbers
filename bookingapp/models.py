@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 SERVICES = (
+        ('', 'Service'),
         ('Gents Cut', 'Gents Cut'),
         ('Kids Cut', 'Kids Cut'),
         ('Cut and Shave', 'Cut and Shave'),
@@ -13,6 +14,7 @@ SERVICES = (
         )
 
 TIME_SLOTS = (
+        ('', 'Time Slot'),
         ('9.00 - 10.00', '9.00 - 10.00'),
         ('10.00 - 11.00', '10.00 - 11.00'),
         ('11.00 - 12.00', '11.00 - 12.00'),
@@ -25,6 +27,7 @@ TIME_SLOTS = (
         )
 
 BARBER_NAME = (
+        ('', 'Barber Name'),
         ('Nathan', 'Nathan'),
         ('Chris', 'Chris'),
         ('Ben', 'Ben'),

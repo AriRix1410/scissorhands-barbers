@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'crispy_bootstrap5',
+    'widget_tweaks',
     'main',
     'testimonials',
     'bookingapp',
@@ -65,9 +66,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
