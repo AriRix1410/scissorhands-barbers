@@ -21,7 +21,8 @@ def make_booking(request):
             booking_form = form.save(commit=False)
             booking_form.customer = request.user
             booking_form.save()
-            messages.success(request, ('Your booking is awaiting confirmation'))
+            messages.success(
+                request, ('Your request has been sent and is awaiting confirmation'))
             return HttpResponseRedirect('/bookings')
     else:
         form = BookingForm()
@@ -62,7 +63,8 @@ def edit_booking(request, booking_id):
             booking_form.customer = request.user
             booking_form.approved = False
             booking_form.save()
-            messages.success(request, ('Your booking is awaiting confirmation'))
+            messages.success(
+                request, ('Your booking is awaiting confirmation'))
             return redirect('my_bookings')
     form = BookingForm(instance=booking)
     context = {

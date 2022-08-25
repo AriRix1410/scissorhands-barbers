@@ -5,6 +5,7 @@
 body {
   position: relative;
   overflow-x: hidden;
+  background-color: #212529;
 }
 
 p {
@@ -209,6 +210,10 @@ header.masthead .masthead-heading {
 
 /* About */
 
+.bg-white {
+  background-color: #fff;
+}
+
 .team-member {
   margin-bottom: 3rem;
   text-align: center;
@@ -256,6 +261,10 @@ section#location .section-heading {
   /* The height is 400 pixels */
   width: 100%;
   /* The width is the width of the web page */
+}
+
+.text-light {
+  color: #fff;
 }
 
 /* Footer */
