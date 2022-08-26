@@ -1,8 +1,8 @@
 /*!
-* Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
+ * Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
+ * Copyright 2013-2022 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+ */
 //
 // Scripts
 // 
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
-// Set Timeout Function For Messages
+// Set Timeout Function For Messages From Django Blog Project
 setTimeout(function () {
     let messages = document.getElementById('msg');
     let alert = new bootstrap.Alert(messages);
