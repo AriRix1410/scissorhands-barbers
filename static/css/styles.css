@@ -145,7 +145,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("/media/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -239,7 +239,7 @@ header.masthead .masthead-heading {
 
 section#location {
   background-color: #212529;
-  background-image: url("../assets/img/clipper-image.jpg");
+  background-image: url("/media/img/clipper-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
