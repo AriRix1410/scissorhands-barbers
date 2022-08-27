@@ -8,5 +8,6 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('date', 'time', 'barber', 'service',)
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date', 'min': datetime.datetime.now().date()}),
+            'date': forms.DateInput(
+                attrs={'type': 'date', 'min': datetime.datetime.now().date()}),
         }

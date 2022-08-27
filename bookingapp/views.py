@@ -12,7 +12,7 @@ from .forms import BookingForm
 @login_required()
 def make_booking(request):
     '''
-    Posts data to bookings. Renders the 
+    Posts data to bookings. Renders the
     bookings page.
     '''
     if request.method == "POST":
@@ -22,7 +22,8 @@ def make_booking(request):
             booking_form.customer = request.user
             booking_form.save()
             messages.success(
-                request, ('Your request has been sent and is awaiting confirmation'))
+                request, ('Your request has been sent and is awaiting\
+                     confirmation'))
             return HttpResponseRedirect('/bookings')
     else:
         form = BookingForm()

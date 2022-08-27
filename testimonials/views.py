@@ -36,7 +36,7 @@ class TestimonialList(generic.ListView):
 def write_testimonial(request):
     '''
     Posts data to testimonials. If the submit is successful
-    then page redirects to testimonials page. Renders the 
+    then page redirects to testimonials page. Renders the
     write testimonials page.
     '''
     if request.method == "POST":

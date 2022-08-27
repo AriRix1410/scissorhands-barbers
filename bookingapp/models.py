@@ -48,4 +48,5 @@ class Booking(models.Model):
         ordering = ["-date"]
 
     def __str__(self):
-        return f"{self.customer} has booked {self.service} on {self.date} at {self.time} with {self.barber}"
+        return f"{self.customer} has booked {self.service}\
+             on {self.date} at {self.time} with {self.barber}"
