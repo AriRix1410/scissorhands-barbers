@@ -145,7 +145,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("/media/img/header-bg.jpg");
+  background-image: url("https://res.cloudinary.com/dggsnhxx6/image/upload/v1661549745/static/assets/img/header-bg.bbaad3daade0.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -239,7 +239,7 @@ header.masthead .masthead-heading {
 
 section#location {
   background-color: #212529;
-  background-image: url("/media/img/clipper-image.jpg");
+  background-image: url("https://res.cloudinary.com/dggsnhxx6/image/upload/v1661549746/static/assets/img/clipper-image.d9e44166f1ad.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
