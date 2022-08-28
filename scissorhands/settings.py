@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'ALLOW-FROM "https://ui.dev/amiresponsive?url=https://scissorhands-barbers.herokuapp.com"'
 
 ALLOWED_HOSTS = ["scissorhands-barbers.herokuapp.com", "localhost"]
 
@@ -74,14 +74,15 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-info',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
-    }
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 MIDDLEWARE = [
+    'csp.middleware.CSPMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,6 +150,41 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+# Content Security Policy
+
+CSP_DEFAULT_SRC = ("'self'")
+
+CSP_IMG_SRC = [
+    "'self'",
+    'https://res.cloudinary.com',
+    'https://maps.gstatic.com'
+]
+
+CSP_STYLE_SRC = [
+    "'self'",
+    'https://res.cloudinary.com',
+    'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
+    'https://maps.googleapis.com/maps-api-v3/api/js/50/2/common.js',
+    'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
+    'https://maps.googleapis.com/maps-api-v3/api/js/50/2/common.js',
+    "'unsafe-inline'"
+]
+
+CSP_SCRIPT_SRC = [
+    "'self'",
+    'https://use.fontawesome.com',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+    'https://res.cloudinary.com',
+    'https://maps.googleapis.com',
+    "'unsafe-inline'"
+]
+
+CSP_CONNECT_SRC = ('https://maps.googleapis.com')
+
+CSP_FRAME_SRC = [
+    'https://ui.dev/amiresponsive',
 ]
 
 
