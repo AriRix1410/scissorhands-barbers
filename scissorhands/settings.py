@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from django.contrib.messages import constants as messages
 import os
 import sys
+from django.contrib.messages import constants as messages
 import dj_database_url
 
 if os.path.isfile("env.py"):
@@ -82,7 +82,6 @@ MESSAGE_TAGS = {
 }
 
 MIDDLEWARE = [
-    'csp.middleware.CSPMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -152,42 +151,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Content Security Policy
-
-CSP_DEFAULT_SRC = ("'self'")
-
-CSP_IMG_SRC = [
-    "'self'",
-    'https://res.cloudinary.com',
-    'https://maps.gstatic.com'
-]
-
-CSP_STYLE_SRC = [
-    "'self'",
-    'https://res.cloudinary.com',
-    'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
-    'https://maps.googleapis.com/maps-api-v3/api/js/50/2/common.js',
-    'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
-    'https://maps.googleapis.com/maps-api-v3/api/js/50/2/common.js',
-    "'unsafe-inline'"
-]
-
-CSP_SCRIPT_SRC = [
-    "'self'",
-    'https://use.fontawesome.com',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-    'https://res.cloudinary.com',
-    'https://maps.googleapis.com',
-    "'unsafe-inline'"
-]
-
-CSP_CONNECT_SRC = ('https://maps.googleapis.com')
-
-CSP_FRAME_SRC = [
-    'https://ui.dev/amiresponsive',
-]
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -207,7 +170,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = [
+    'cloudinary_storage.storage.StaticHashedCloudinaryStorage',
+]
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
