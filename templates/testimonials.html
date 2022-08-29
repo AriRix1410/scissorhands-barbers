@@ -26,6 +26,21 @@
                         <p class="card-text">{{ list.name }}</p>
                         <hr />
                         <p class="card-text text-muted h6">{{ list.created_on }}</p>
+                        <hr />
+                        {% if user.is_authenticated %}
+                            {% if user.id == list.name.id %}
+                                <span>
+                                    <a href="{% url 'edit_testimonial' list.id %}">
+                                        <button class="btn btn-primary btn-form text-uppercase">Edit</button>
+                                    </a>
+                                </span>
+                                <span>
+                                    <a href="{% url 'delete_testimonial' list.id %}">
+                                        <button class="btn btn-primary btn-form text-uppercase">Delete</button>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

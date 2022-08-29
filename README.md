@@ -2,7 +2,7 @@
 
 Scissorhand's Barbers is a fictional barbershop situated in York, England. The aim of this site is to allow users the ability to make booking requests, view their confirmed bookings and to write and read testimonials.
 
-The site is responsive and has been designed using the Agency theme from ![StartBootstrap](https://startbootstrap.com/theme/agency). Languages and frameworks used for this project are HTML, CSS, JavaScript, Python and Django.
+The site is responsive and has been styled using the Agency theme from [StartBootstrap](https://startbootstrap.com/theme/agency). Languages and frameworks used for this project are HTML, CSS, JavaScript, Python and Django. Agile methodology has been used to plan and design this project using an MVC framework.
 
 The live link to this project can be found here - http://scissorhands-barbers.herokuapp.com/
 

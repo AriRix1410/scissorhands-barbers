@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Testimonials</div>
+    </div>
+</header>
+
+<!-- Testimonial Form -->
+<div class="page-section bg-light">
+    <div class="row button-center">
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- Users must be logged in to edit a testimonial -->
+                {% if user.is_authenticated %}
+
+                <h3 class="section-heading text-uppercase button-center">Edit your testimonial</h3>
+                <form method="post">
+                    {{ form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-lg btn-form">Submit</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

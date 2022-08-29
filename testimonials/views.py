@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.contrib import messages
@@ -52,3 +52,40 @@ def write_testimonial(request):
         form = TestimonialForm()
 
     return render(request, 'write_testimonial.html', {'form': form})
+
+
+@login_required
+def edit_testimonial(request, testimonial_id):
+    '''
+    Gets the stored data by id for a specific confirmed
+    testimonial and allows for editing. Resubmission sets the
+    approved back to false for it to be confirmed again by
+    the admin. Renders edit testimonials page.
+    '''
+    testimonial = get_object_or_404(Testimononial, id=testimonial_id)
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, instance=testimonial)
+        if form.is_valid():
+            testimonial_form = form.save(commit=False)
+            testimonial_form.name = request.user
+            testimonial_form.approved = False
+            testimonial_form.save()
+            messages.success(
+                request, ('Your testimonial is awaiting approval'))
+            return redirect('/testimonials')
+    form = TestimonialForm(instance=testimonial)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_testimonial.html', context)
+
+
+@login_required
+def delete_testimonial(request, testimonial_id):
+    '''
+    Gets stored testimonial data by testing id and allows
+    the user to delete the testimonial
+    '''
+    testimonial = get_object_or_404(Testimononial, id=testimonial_id)
+    testimonial.delete()
+    return redirect('/testimonials')

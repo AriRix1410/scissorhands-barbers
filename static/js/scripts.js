@@ -1,10 +1,5 @@
-/*!
- * Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
- * Copyright 2013-2022 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
- */
 //
-// Scripts
+// Navbar shrink script from Start Bootstrap - Agency theme
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -16,9 +11,9 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-shrink');
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.add('navbar-shrink');
         }
 
     };
@@ -36,7 +31,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 74,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
