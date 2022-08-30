@@ -10,54 +10,88 @@ The live link to this project can be found here - http://scissorhands-barbers.he
 
 ## User Stories
 
+### First Time Visitor Goals:
+1. As a First Time Visitor, I should be able to view offered services.
+2. As a First Time Visitor, I should be able to read about the business.
+3. As a First Time Visitor, I should be able to view testimonials.
+4. As a First Time Visitor, I should be able to make an account.
+
+### Returning Visitor Goals:
+5. As a Returning Visitor, I should be able to request a booking.
+6. As a Returning Visitor, I should be able to view my bookings.
+7. As a Returning Visitor, I should be able to cancel or delete my bookings.
+8. As a Returning Visitor, I should be able to write a testimonial.
+9. As a Returning Visitor, I should be able to edit or delete my testimonials.
+
+### Site Admin Goals:
+10. As a Site Admin, I should be able to approve testimonials to filter spam or bad language.
+11. As a Site Admin, I should be able to confirm bookings to minimize risk of double bookings.
+
+## Design
+
+- The initial design of this project was done via a Theme named Agency, a downloaded theme from [StartBootstrap](https://startbootstrap.com/theme/agency). I chose this theme because I felt it refelected the branding that I was trying to create for this business, a quirky and edgy Barbershop located in York, England. I then altered this theme to meet my own requirements.
 
 ## Features 
 
 ### Existing Features
 
-- __Landing Page__
-  - Upon first accessing the page, users will be presented with a title, "Star Wars Quiz" in ASCII.
-  - ASCII has been used because it improves the look of the quiz and clearly tells users what the game is.
-  - Also found here are a brief description about what the quiz entails, how to play the game and an input request for the users name.
+- __Header/Navigation Bar__
+  - This is featured on all pages and is fully responsive. This area includes links to the page sections Services, About, Locate Us as well as pages for Testimonials and Bookings. If the user is not logged in then there are links to register or login in. If the user is already logged in then there is a link to logout. This is replicated on each page to make navigation easier. For smaller screen sizes, the navbar becomes a drop down.
+  - The logo is displayed in the top left of the page with navigation links displayed to the right.
+  - The navigation bar allows users to be able to easily navigate between all sections and pages, on all devices.   
 
-![Landing Page](/assets/images/home-screen.png)
+![Header/Nav Bar](static/assets/img/readme/navbar-login-register.png)
+![Header/Nav Bar](static/assets/img/readme/navbar-logout.png)
+
+- __The Landing Page/Masthead__
+
+  - This section includes a photograph with text overlay to allow users to see exactly what the business is.
+  - The masthead image is located on all pages to tie the full site together, I chose this image as it reflected the vintage style and branding I was trying to create for this business.
+  - The landing page masthead displays a welcome message, a slogan and a button which navigates to the services section. On all other pages, this just displays the page name.
+
+![Landing Page](static/assets/img/readme/landing-page.png)
 
 - __Services__
-  - Users are required to input a name.
-  - This is asked at this stage in the game in order to provide a more personalised experience from the start.
-  - Names are required to be a maximum of 6 characters in length (this improved the appearance of the high scores at the end), and contain only letters and numbers.
-  - If names meet the validation requirements then a greeting will be displayed and the user will be asked if they are ready to start the quiz.
+  - This section allows users to see what services are offered at this barbers and the images used reflect this.
+  - To further add to the branding and show users what Scissorhand's is about, a subheading of "Vintage Cuts, Modern Styles" is included in this section.
+  - Also included is a brief paragraph with the aim in showing further services offered and that Scissorhand's caters for all potential clients regardless of their age.
 
-  ![Services](/assets/images/start-quiz.png)
-  
-
-  - If names do not meet the validation requirements then a message will be displayed as to which validation requirement the name fails and to enter another name.
-
-  ![Name Too Long](/assets/images/invalid-data-long.png) 
-  ![Invalid Characters](/assets/images/invalid-data-char.png)
+  ![Services](static/assets/img/readme/services.png)
 
 - __About__
-  - Users will be asked a total of 20 questions.
-  - These questions are all multiple choice with answers either a, b, c or d. These options are not case sensitive so if the user is playing the game in CAPS then the answers will still display as correct or incorrect.
-  - If answers do not meet the validation requirements then a message will be displayed stating invalid answer and to try again.
+  - This section allows users to learn abit about the business as well as information about the barbers.
+  - In this section, I have wrote a brief history of the business and an introduction of the barbers such as when they qualified and what they like to do. This is to give the business a more welcoming feel towards new users.
+  - Also included here are photographs of the barbers, again to provide new users with with a sense of familiarity towards the business.
 
-  ![Invalid Answer](/assets/images/invalid-ans.png)
+  ![About](static/assets/img/readme/about-us-images.png)
+  ![About](static/assets/img/readme/about-us-blurb.png)
+  
+- __Locate Us__
+  - This section allows users to see the location of the barbershop.
+  - In this section, users can see the address of the business as well as Google map of the location.
+  - For this section, I have used a Google Map API to show an exact, marked location of where the barbershop would be situated. I thought this added a nice touch to the page and made for a better user experience. 
 
-  - Upon succesfully submitting an answer, users will be told whether they are correct or incorrect and the next question will be asked.
+  ![Locate](static/assets/img/readme/locate.png)
 
-  ![Correct Answer](/assets/images/correct-ans.png)
-  ![Incorrect Answer](/assets/images/incorrect-ans.png)
+- __Testimonials__
+  - This section allows users to see the location of the barbershop.
+  - In this section, users can see the address of the business as well as Google map of the location.
+  - For this section, I have used a Google Map API to show an exact, marked location of where the barbershop would be situated. I thought this added a nice touch to the page and made for a better user experience. 
 
-- __Location__
-  - At the end of the quiz, users will be told how many correct answers they got out of 20 and asked if they would like to play again.
-  - If users choose to play the game again then they will be taken back to the start of the questions.
-  - If users choose not to play again then they will recieve a good bye message and be shown the High Scores.
-  - Names and scores are stored in a Google Sheets worksheet via API.
+  ![Testimonials](static/assets/img/readme/locate.png)
+  ![Testimonials](static/assets/img/readme/locate.png)
 
-  ![End of Quiz](/assets/images/quiz-end.png)
+- __Bookings__
+  - This section allows users to see the location of the barbershop.
+  - In this section, users can see the address of the business as well as Google map of the location.
+  - For this section, I have used a Google Map API to show an exact, marked location of where the barbershop would be situated. I thought this added a nice touch to the page and made for a better user experience. 
+
+  ![Locate](static/assets/img/readme/locate.png)
+  ![Locate](static/assets/img/readme/locate.png)
+  ![Locate](static/assets/img/readme/locate.png)
 
 - __Register/Login__
-  -
+  - This 
   -
   -
 
