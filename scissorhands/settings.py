@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+# pylint: disable=locally-disabled, line-too-long
+# pylint: disable=locally-disabled, unused-import
 
 from pathlib import Path
 import os

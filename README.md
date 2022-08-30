@@ -24,12 +24,12 @@ The live link to this project can be found here - http://scissorhands-barbers.he
 9. As a Returning Visitor, I should be able to edit or delete my testimonials.
 
 ### Site Admin Goals:
-10. As a Site Admin, I should be able to approve testimonials to filter spam or bad language.
+10. As a Site Admin, I should be able to approve testimonials in order to filter spam or bad language.
 11. As a Site Admin, I should be able to confirm bookings to minimize risk of double bookings.
 
 ## Design
 
-- The initial design of this project was done via a Theme named Agency, a downloaded theme from [StartBootstrap](https://startbootstrap.com/theme/agency). I chose this theme because I felt it refelected the branding that I was trying to create for this business, a quirky and edgy Barbershop located in York, England. I then altered this theme to meet my own requirements.
+- The initial design of this project was done via a Theme named Agency, a downloaded theme from [StartBootstrap](https://startbootstrap.com/theme/agency). I chose this theme because I felt it refelected the branding that I was trying to create for this business, a quirky, vintage themed Barbershop located in York, England. I then altered this theme to meet my own requirements.
 
 ## Features 
 
@@ -40,8 +40,8 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - The logo is displayed in the top left of the page with navigation links displayed to the right.
   - The navigation bar allows users to be able to easily navigate between all sections and pages, on all devices.   
 
-![Header/Nav Bar](static/assets/img/readme/navbar-login-register.png)
-![Header/Nav Bar](static/assets/img/readme/navbar-logout.png)
+  ![Header/Nav Bar](static/assets/img/readme/navbar-login-register.png)
+  ![Header/Nav Bar](static/assets/img/readme/navbar-logout.png)
 
 - __The Landing Page/Masthead__
 
@@ -49,7 +49,7 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - The masthead image is located on all pages to tie the full site together, I chose this image as it reflected the vintage style and branding I was trying to create for this business.
   - The landing page masthead displays a welcome message, a slogan and a button which navigates to the services section. On all other pages, this just displays the page name.
 
-![Landing Page](static/assets/img/readme/landing-page.png)
+  ![Landing Page](static/assets/img/readme/landing-page.png)
 
 - __Services__
   - This section allows users to see what services are offered at this barbers and the images used reflect this.
@@ -74,84 +74,147 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   ![Locate](static/assets/img/readme/locate.png)
 
 - __Testimonials__
-  - This section allows users to see the location of the barbershop.
-  - In this section, users can see the address of the business as well as Google map of the location.
-  - For this section, I have used a Google Map API to show an exact, marked location of where the barbershop would be situated. I thought this added a nice touch to the page and made for a better user experience. 
+  - This page allows all users to be able to view confirmed testimonials.
+  - By logging in to the site, users have the ability to write testimonials as well as the ability to edit or delete any testimonials that are being rendered to the testimonials page, as long as they are the ones that have have created them.
+  - On submission of a testimonial, an alert is displayed that states "Your testimonial is awaiting approval", this is to provide confirmation to the user that the testimonial has been sent, as it will not be rendered on the testimonials page until it has been admin approved.
+  - If an approved testimonial is edited, then the testimonial approval will be set back to False and will need to be approved again before it is rendered to the testimonials page.
 
-  ![Testimonials](static/assets/img/readme/locate.png)
-  ![Testimonials](static/assets/img/readme/locate.png)
+  ![Testimonials](static/assets/img/readme/testimonials.png)
+  ![Testimonials](static/assets/img/readme/write-testimonial.png)
 
 - __Bookings__
-  - This section allows users to see the location of the barbershop.
-  - In this section, users can see the address of the business as well as Google map of the location.
-  - For this section, I have used a Google Map API to show an exact, marked location of where the barbershop would be situated. I thought this added a nice touch to the page and made for a better user experience. 
+  - Users must be logged in to use this section.
+  - This page allows users to request a booking slot for a chosen date, time slot, and service with a chosen barber.
+  - Users can access thier bookings via the My Bookings link at the bottom of the page. This shows only bookings specific to that user and both confirmed and unconfirmed bookings will be displayed, with unconfirmed bookings being displayed in red text stating unconfirmed.
+  - Users have the ability to edit or cancel their confirmed bookings. If a booking is still unconfirmed, then the user is able to delete it.
+  - On submission of a booking request, an alert is displayed that states "Your request has been sent and is awaiting confirmation", this is to provide confirmation to the user that the booking request has been sent.
+  - If an approved booking is edited, then the booking approval will be set back to False and will need to be approved again. 
 
-  ![Locate](static/assets/img/readme/locate.png)
-  ![Locate](static/assets/img/readme/locate.png)
-  ![Locate](static/assets/img/readme/locate.png)
+  ![Bookings](static/assets/img/readme/booking-form.png)
+  ![Bookings](static/assets/img/readme/view-bookings.png)
+  ![Bookings](static/assets/img/readme/unconfirmed.png)
+  ![Bookings](static/assets/img/readme/confirmed.png)
 
 - __Register/Login__
-  - This 
-  -
-  -
+  - This has been created using Django Allauth.
+  - Users have the ability to sign up for an account, log in and log out.
+  - This is required to write a testimonial and make a booking request.
+
+  ![Register](static/assets/img/readme/register.png)
+  ![Login](static/assets/img/readme/login.png)
 
 ### Features Left to Implement
 
-- A feature I would like to add in the future is to have more questions and to randomise them so users would have to answer any 20 guestions that are randomly selected by the computer, in order to provide a better user experience.
-- I would also like for users to be able to see their previous scores.
+- A feature I initially intended on implementing, is the ability to automatically confirm appointments that do not clash with other appointments. After toying with this, I decided to conduct a small research task within the barber industry and ask barbers what they would want from a booking system. Out of the 5 business I asked, 3 of them said they would prefer to manually accept bookings themselves because they have a lot of walk-ins and telephone appointments booked, so having automatic confirmation would potentially result ii double bookings with bookings taken via other means. 
+- I would like to add the ability to be able to pay for services online after bookings are confirmed.
 
 ## Agile
 
-Google Sheets was used to store the data for the user's name and score. When the quiz ends this data is sorted numerically in order of highest scores to lowest and when the user no longer wants to play, the top 5 highest scores are displayed.
+Agile methodology was used to manage this project by breaking it up into different user stories. This was done via the Github Projects board and creating issues from a user story template. Consulting this throughout the project has helped me keep on track with what features I wanted to include and what I wanted to achieve from this project.
 
-![High Scores Sheet](/assets/images/scores-sheet.png)
-
-This project also contains a questions Class in order to store both the prompts to the questions and also the question answers.
+![Project Board](/static/assets/img/readme/agile.png)
 
 ## Logic
 
 ### Flowchart
 
-![Flowchart](/assets/images/flowchart.png)
+![Flowchart](/static/assets/img/flowchart.png)
 
 ## Testing
 
 I have manually tested this project in the following ways:
 
-- All code has been passed through the [PEP8 Python Validator](http://pep8online.com/checkresult) with no issues.
+- This site has been tested on Chrome, Firefox and Microsoft Edge as well as on different screen sizes via Dev tools and on my own devices. Dev tools has also been used to identify any errors within my HTML and CSS code.
+- I have confirmed that both forms work. They require entry in all fields, drop downs require a selected object and the submit button works. For bookings, I have checked that a past date cannot be selected.
 
-![PEP8 Run](/assets/images/pep8.png)
-![PEP8 Class](/assets/images/pep8-class.png)
-![PEP8 Questions](/assets/images/pep8-questions.png)
+### Validator Testing
 
-- Given invalid inputs such as names that are over 6 characters in length, names that contain symbols, answers other than a, b, c or d and inputs different to y or n when only y or n are required.
-- Tested in my local terminal on Gitpod and in the Code Institute Heroku terminal.
+- Python
+  - Any errors or warnings displayed throughout the project in the Github terminal have been addressed.
+  - All code has been passed through the [PEP8 Python Validator](http://pep8online.com/checkresult) with no issues.
+    - ![PEP8](/static/assets/img/readme/pep8-validation.png)
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org)
+    - ![W3C validator](/static/assets/img/readme/html-validation.png)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org)
+    - ![(Jigsaw) validator](/static/assets/img/readme/css-validation.png)
+- Javascript
+  - No significant issues were found when passing through the official [JSHint Javascript validator](https://jshint.com/)
+  - After investigation, despite displaying that there are two unused and two undefined variables, this is not the case. These are called on outside of the Javascript file.
+    - ![(Jigsaw) validator](/static/assets/img/readme/jshint-validation.png)
+
+- I have checked accessibilty by running through Lighthouse via devtools
+  - ![Lighthouse](/static/assets/img/readme/lighthouse.png)
+
+### Security
+ - The API Key for Google Maps is restricted to my Heroku app and my Github workspace for this project.
 
 ### Bugs
 
-- When trying to set up user input validation for my questions, I encountered an issue where the error message would print but would still accept the input and proceed further in the game. This was due to me putting the if and while statements in my loop in the wrong order. When switched, the code performed as expected.
-- When writing the code for the high scores, the scores after sorting where sorted alphanumerically, this caused the high scores to be incorrect as numbers such as 11 and 14 where lower than other scores with a lower value as the first digit was lower. After recieving help in Stack Overflow, I was able to convert the scores into integers and then the scores were in the correct order.
-- Initially, instead of get_all_values, I used col_values. Although this did sort the scores, I realised that by doing this, the corresponding names to the scores were not being printed and instead was just the 5 first name entries on Google sheets. By using get_all_values instead, I was able to sort by the scores column but also print the correct names for those scores.
-- By using the method above, I encountered another problem where it was sorting the first column which contains the name data as opposed to the second column which contained the score data. This was due to a problem with my indexing being incorrect. After researching again, I was able to re-write this so that the data being sorted was from the scores column and the issue was fixed.
+- I encountered an issue where background images within the CSS were not appearing in the Heroku app, after changing the path for these to the Cloudinary URL for those images, they were dispayed.
+- Initially, when trying to display the bookings on the my bookings page, all bookings regardless of the user were being displayed. After more research, I was able to solve this by restricting it to if the request user is the booking customer.
+- After changing one of my models, I experienced a lot of issues where objects could not be found or where coming back null. To rectify this I went in to Heroku and reset the database, after migrating again in Github, my page rendered correctly.
+- I had another issue where my Google Map was not being displayed within my Heroku app, I realised this was due to the restrictions I had placed on my API key. After adding my app to the allowed list, the map displayed correctly.
 
 ### Unfixed Bugs
 
 - No unfixed bugs
 
-### Validator Testing
-
-- [PEP8 Python Validator](http://pep8online.com/checkresult) - no issues
-
 ## Deployment
 
 - This project has been deployed to Heroku. The steps to deploy are as follows: 
-  - Create a new Heroku app
-  - In the settings tab, set two Config Vars, one for CREDS.json file, and one setting PORT to 8000 
-  - Scroll down and set the build packs to Python and NodeJS, in that order
-  - Click on depoly and link the Heroku app to the Github repositary
-  - Scroll down to manual deploy and click deploy branch
-  - After some time, a message will be displayed stating the app was successfully deployed
-  - You can then click on view to see the deployed project.
+  - In Heroku
+    - Create a new Heroku app 
+    - Add the database to app resources by going to the resources tab, and searching for Heroku Postgres in add ons
+    - In the settings tab, click on config vars and copy the DATABASE_URL text
+  - In GitHub
+    - Create new env.py file on top level directory
+  - In env.py
+    - Import os library
+    - Set environment variables for the database url
+    - Set environment variables for the secret key
+  - In Heroku
+    - Add the secret key to config vars
+  - In settings.py
+    - Import the env.py file
+    - Remove the insecure secret key and replace
+    - Replace DATABASES section
+  - In the terminal
+    - Make migrations
+  - In Cloudinary
+    - Copy the CLOUDINARY_URL from Cloudinary dashboard
+  - In env.py
+    - Add cloudinary url to env.py
+  - In Heroku
+    - Add Cloudinary URL to Heroku Config Vars
+  - In settings.py
+    - Add Cloudinary Libraries to installed apps
+    - Tell Django to use Cloudinary to store media and static files
+      - STATIC_URL = '/static/'
+      - STATICFILES_STORAGE ='cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+      - STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+      - STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+      - MEDIA_URL = '/media/'
+      - DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MediaCloudinaryStorage'
+    - Link the file to the templates directory in Heroku. Place under the BASE_DIR line
+    - Change the templates directory to TEMPLATES_DIR
+    - Add Heroku Hostname to ALLOWED_HOSTS
+  - In Gitpod
+    - Create 3 new folders on the top level directory (static, media and templates)
+    - Create Procfile on the top level directory
+  - In Procfile
+    - Add code web: gunicorn scissorhands.wsgi
+  - In the termimal
+    - Add, Commit and Push
+      - git add .
+      - git commit -m "Deployment Commit"
+      - git push
+  - In Heroku
+    - Go to deploy tab and choose Github as the deployment method
+    - Connect to the correct Github repository for the project
+    - In manual deploy, select the main branch and click deploy branch
+
 
 ## Credits  
 
