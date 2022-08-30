@@ -15,36 +15,61 @@
 <section class="page-section bg-light">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">My confirmed bookings</h2>
+            <h2 class="section-heading text-uppercase">My bookings</h2>
             <hr />
         </div>
-        <!-- Only confirmed, user specific bookings will be displayed -->
+        <!-- Only user specific bookings will be displayed -->
         <div class="row button-center">
             {% for bookings in booking_data %}
             <div class="col-lg-12">
                 {% if request.user == bookings.customer %}
-                    {% if bookings.approved == True %}
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ bookings.date }} at {{ bookings.time }}</h3>
-                            <hr />
-                            <p class="card-text">You have booked {{ bookings.service }}</p>
-                            <hr />
-                            <p class="card-text text-muted h6">With {{ bookings.barber }}</p>
-                            <hr />
-                            <span>
-                                <a href="{% url 'edit_booking' bookings.id %}">
-                                    <button class="btn btn-primary btn-form text-uppercase">Edit</button>
-                                </a>
-                            </span>
-                            <span>
-                                <a href="{% url 'cancel_booking' bookings.id %}">
-                                    <button class="btn btn-primary btn-form text-uppercase">Cancel</button>
-                                </a>
-                            </span>
-                        </div>
+                <!-- If booking is confirmed -->
+                {% if bookings.approved == True %}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ bookings.date }} at {{ bookings.time }}</h3>
+                        <hr />
+                        <p class="card-text">You have booked {{ bookings.service }}</p>
+                        <hr />
+                        <p class="card-text text-muted h6">With {{ bookings.barber }}</p>
+                        <hr />
+                        <span>
+                            <a href="{% url 'edit_booking' bookings.id %}">
+                                <button class="btn btn-primary btn-form text-uppercase">Edit</button>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="{% url 'cancel_booking' bookings.id %}">
+                                <button class="btn btn-primary btn-form text-uppercase">Cancel</button>
+                            </a>
+                        </span>
                     </div>
-                    {% endif %}
+                </div>
+                {% endif %}
+                <!-- If booking is unconfirmed -->
+                {% if bookings.approved == False %}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title unconfirmed"> {{ bookings.date }} at {{ bookings.time }}
+                            <strong>UNCONFIRMED</strong>
+                        </h3>
+                        <hr />
+                        <p class="card-text">Sorry <strong>{{ bookings.customer }}</strong>, we are a little busy at the
+                            moment and are currently unable to confirm your booking for {{ bookings.service }} on
+                            {{ bookings.date }} at {{ bookings.time }} with {{ bookings.barber }}. Please check again
+                            later!
+                        </p>
+                        <hr />
+                        <p class="card-text text-muted h6">We apologise for any inconvenience</p>
+                        <hr />
+                        <span>
+                            <a href="{% url 'cancel_booking' bookings.id %}">
+                                <button class="btn btn-primary btn-form text-uppercase">Delete</button>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                {% endif %}
                 {% endif %}
             </div>
             {% endfor %}
@@ -56,8 +81,8 @@
             <div class="button-center">
                 <div class="row">
                     <p>If you'd like to send another booking request please click below</p>
-                    <a class="btn btn-primary btn-lg text-uppercase" name="bookings"
-                    href="{% url 'bookings' %}">Make a Booking</a>
+                    <a class="btn btn-primary btn-lg text-uppercase" name="bookings" href="{% url 'bookings' %}">Make a
+                        Booking</a>
                 </div>
             </div>
         </div>

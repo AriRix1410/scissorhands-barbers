@@ -1,6 +1,10 @@
+# pylint: disable=locally-disabled, no-member
+'''
+Import the required packages
+'''
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.views import generic, View
+from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
@@ -80,6 +84,7 @@ def edit_testimonial(request, testimonial_id):
     return render(request, 'edit_testimonial.html', context)
 
 
+# pylint: disable=unused-argument
 @login_required
 def delete_testimonial(request, testimonial_id):
     '''

@@ -258,9 +258,7 @@ section#location .section-heading {
 /* Set the size of the div element that contains the map */
 #map {
   height: 400px;
-  /* The height is 400 pixels */
   width: 100%;
-  /* The width is the width of the web page */
 }
 
 .text-light {
@@ -372,7 +370,6 @@ a:link {
   line-height: 34px;
 }
 
-
 .pagination_rounded ul li a {
   float: left;
   color: #ffc800;
@@ -446,4 +443,10 @@ select {
   font-size: 18px;
   text-align: center;
   border-radius: 5px;
+}
+
+/* Bookings */
+
+.unconfirmed {
+  color: red;
 }

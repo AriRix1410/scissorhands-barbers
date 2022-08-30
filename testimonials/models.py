@@ -1,3 +1,6 @@
+'''
+Import the required packages
+'''
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -5,6 +8,9 @@ from django.contrib.auth.models import User
 
 
 class Testimononial(models.Model):
+    '''
+    Testimonial model
+    '''
     title = models.CharField(max_length=200, unique=True)
     name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="client_reviews")
@@ -13,6 +19,9 @@ class Testimononial(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        '''
+        Orders testimonials by created date
+        '''
         ordering = ["-created_on"]
 
     def __str__(self):

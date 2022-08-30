@@ -1,3 +1,7 @@
+# pylint: disable=locally-disabled, no-member
+'''
+Import required packages
+'''
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -74,11 +78,12 @@ def edit_booking(request, booking_id):
     return render(request, 'edit_booking.html', context)
 
 
+# pylint: disable=unused-argument
 @login_required
 def cancel_booking(request, booking_id):
     '''
     Gets stored booking data by booking id and allows
-    the user to cancel the booking
+    the user to delete the booking
     '''
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()

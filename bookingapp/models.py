@@ -1,3 +1,6 @@
+'''
+Import the required packages
+'''
 import datetime
 from django.db import models
 from django.core.validators import MinValueValidator
@@ -36,6 +39,9 @@ BARBER_NAME = (
 
 
 class Booking(models.Model):
+    '''
+    Booking model
+    '''
     date = models.DateField(
         validators=[MinValueValidator(datetime.date.today)])
     time = models.CharField(max_length=50, null=True, choices=TIME_SLOTS)
@@ -45,6 +51,9 @@ class Booking(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        '''
+        Orders by booking date
+        '''
         ordering = ["-date"]
 
     def __str__(self):
