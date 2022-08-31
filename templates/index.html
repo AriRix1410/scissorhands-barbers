@@ -5,9 +5,15 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
+        {% if user.is_authenticated %}
+        <div class="masthead-subheading">Welcome Back To Scissorhand's <strong>{{ user }}</strong></div>
+        <div class="masthead-heading text-uppercase">Are You Due Another Haircut?</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'bookings' %}">Book Again</a>
+        {% else %}
         <div class="masthead-subheading">Welcome To Scissorhand's Barbershop</div>
         <div class="masthead-heading text-uppercase">High standards are on us.</div>
         <a class="btn btn-primary btn-xl text-uppercase" href="#services">Be your best</a>
+        {% endif %}
     </div>
 </header>
 
@@ -55,7 +61,8 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">About Us</h2>
-            <h3 class="section-subheading text-muted">Established in 2015, a quirky little Barbers found on Silver Street in the
+            <h3 class="section-subheading text-muted">Established in 2015, a quirky little Barbers found on Silver
+                Street in the
                 city of York, an apt place for this upcoming, hip Barber shop. Scissorhands began when childhood
                 friends, Chris and Nathan, took their childhood dream and made it a reality, soon expanding their
                 horizons and knowledge to now being able to train the next generation of Barber prodigies in the way
