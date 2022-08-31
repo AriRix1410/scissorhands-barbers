@@ -189,6 +189,15 @@ header.masthead .masthead-heading {
   }
 }
 
+@media (max-width: 400px) {
+  header.masthead .masthead-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
 /* Services */
 
 .service-item {
@@ -329,6 +338,24 @@ input[type="checkbox"] {
 .btn-form {
   margin: 1.25rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (max-width: 400px) {
+  .row {
+    margin: 0;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card-body {
+    padding: 3%;
+  }
+
+  input {
+    width: 95%;
+  }
 }
 
 /* Pagination */
