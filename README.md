@@ -126,6 +126,15 @@ All wireframes have been created using [Balsamiq](https://balsamiq.com/wireframe
   - My Bookings
     - ![My Bookings](static/assets/img/wireframes/wireframe-my-bookings.png)
 
+## Logic Flowcharts
+
+Flowcharts for the python logic behind this project have been created using [Lucid](https://lucid.app/)
+
+- Booking Logic
+  - ![Booking Logic](static/assets/img/flowcharts/booking-logic.png)
+- Testimonials Logic
+  - ![Testimonial Logic](static/assets/img/flowcharts/testimonial-logic.png)
+
 ## Agile
 
 Agile methodology was used to manage this project by breaking it up into different user stories. This was done via the Github Projects board and creating issues from a user story template. Consulting this throughout the project has helped me keep on track with what features I wanted to include and what I wanted to achieve from this project.
