@@ -40,8 +40,8 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - The logo is displayed in the top left of the page with navigation links displayed to the right.
   - The navigation bar allows users to be able to easily navigate between all sections and pages, on all devices.   
 
-  ![Header/Nav Bar](static/assets/img/readme/navbar-login-register.png)
-  ![Header/Nav Bar](static/assets/img/readme/navbar-logout.png)
+  ![Nav Bar Login](static/assets/img/readme/navbar-login-register.png)
+  ![Nav Bar Logout](static/assets/img/readme/navbar-logout.png)
 
 - __The Landing Page/Masthead__
 
@@ -64,7 +64,7 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - Also included here are photographs of the barbers, again to provide new users with with a sense of familiarity towards the business.
 
   ![About](static/assets/img/readme/about-us-images.png)
-  ![About](static/assets/img/readme/about-us-blurb.png)
+  ![About Text](static/assets/img/readme/about-us-blurb.png)
   
 - __Locate Us__
   - This section allows users to see the location of the barbershop.
@@ -78,9 +78,10 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - By logging in to the site, users have the ability to write testimonials as well as the ability to edit or delete any testimonials that are being rendered to the testimonials page, as long as they are the ones that have have created them.
   - On submission of a testimonial, an alert is displayed that states "Your testimonial is awaiting approval", this is to provide confirmation to the user that the testimonial has been sent, as it will not be rendered on the testimonials page until it has been admin approved.
   - If an approved testimonial is edited, then the testimonial approval will be set back to False and will need to be approved again before it is rendered to the testimonials page.
+  - This page is paginated so that only 6 testimonials will be displayed on one page.
 
   ![Testimonials](static/assets/img/readme/testimonials.png)
-  ![Testimonials](static/assets/img/readme/write-testimonial.png)
+  ![Write Testimonials](static/assets/img/readme/write-testimonial.png)
 
 - __Bookings__
   - Users must be logged in to use this section.
@@ -90,10 +91,10 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - On submission of a booking request, an alert is displayed that states "Your request has been sent and is awaiting confirmation", this is to provide confirmation to the user that the booking request has been sent.
   - If an approved booking is edited, then the booking approval will be set back to False and will need to be approved again. 
 
-  ![Bookings](static/assets/img/readme/booking-form.png)
-  ![Bookings](static/assets/img/readme/view-bookings.png)
-  ![Bookings](static/assets/img/readme/unconfirmed.png)
-  ![Bookings](static/assets/img/readme/confirmed.png)
+  ![Booking Form](static/assets/img/readme/booking-form.png)
+  ![View Bookings](static/assets/img/readme/view-bookings.png)
+  ![Unconfirmed Bookings](static/assets/img/readme/unconfirmed.png)
+  ![Confirmed Bookings](static/assets/img/readme/confirmed.png)
 
 - __Register/Login__
   - This has been created using Django Allauth.
@@ -113,12 +114,6 @@ The live link to this project can be found here - http://scissorhands-barbers.he
 Agile methodology was used to manage this project by breaking it up into different user stories. This was done via the Github Projects board and creating issues from a user story template. Consulting this throughout the project has helped me keep on track with what features I wanted to include and what I wanted to achieve from this project.
 
 ![Project Board](/static/assets/img/readme/agile.png)
-
-## Logic
-
-### Flowchart
-
-![Flowchart](/static/assets/img/flowchart.png)
 
 ## Testing
 
@@ -154,16 +149,20 @@ I have manually tested this project in the following ways:
 
 - I encountered an issue where background images within the CSS were not appearing in the Heroku app, after changing the path for these to the Cloudinary URL for those images, they were dispayed.
 - Initially, when trying to display the bookings on the my bookings page, all bookings regardless of the user were being displayed. After more research, I was able to solve this by restricting it to if the request user is the booking customer.
-- After changing one of my models, I experienced a lot of issues where objects could not be found or where coming back null. To rectify this I went in to Heroku and reset the database, after migrating again in Github, my page rendered correctly.
+- After changing one of my models, I experienced a lot of issues with programming errors, type errors and invalid cursor names. To rectify this I went in to Heroku and reset the database, after migrating again in Github, my page rendered correctly.
 - I had another issue where my Google Map was not being displayed within my Heroku app, I realised this was due to the restrictions I had placed on my API key. After adding my app to the allowed list, the map displayed correctly.
 
 ### Unfixed Bugs
 
 - No unfixed bugs
 
+### Other Issues
+
+- I have noticed an error within my commits. Whilst resetting the head back to a previous commit, I had an issue with being able to push my code without first pulling it. In the process, multiple commits of the same name have been created, these commits are namely "Comment out x frame options for mock up view" and "Update image paths". I have recognised this and believe it to have been caused by an error of my own making due to having debug set to False whilst still developing this project. Despite my frustrations around this mistake I have accepted this as being another learning oppurtunity for me.
+
 ## Deployment
 
-- This project has been deployed to Heroku. The steps to deploy are as follows: 
+- This project has been deployed to Heroku using the [Django Blog Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf) provided by [Code Institute](https://learn.codeinstitute.net/). The steps to deploy are as follows: 
   - In Heroku
     - Create a new Heroku app 
     - Add the database to app resources by going to the resources tab, and searching for Heroku Postgres in add ons
@@ -220,13 +219,39 @@ I have manually tested this project in the following ways:
 
 ### Content 
 
-- The initial inspiration and code for this project was taken from [Mike Dane](https://www.youtube.com/watch?v=SgQhwtIoQ7o) and [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s&list=RDCMUC4SVo0Ue36XCfOyb5Lh1viQ&index=2), then edited and expanded for my own requirements.
-- [Stack Overflow](https://stackoverflow.com) was a great source of information throughout the project but was particularly used for help with user input validation [here](https://stackoverflow.com/questions/71757895/user-input-validation-in-python), when trying to sort the high scores [here](https://stackoverflow.com/questions/71785967/sorting-column-b-google-sheets-api-python) where I ended up physically asking for help after struggling for a considerable amount of time, with the same issues.
-- [Code Institute](https://learn.codeinstitute.net/) Python Essentials tutorials were consulted throughout for clarification and understanding, especially the Love Sandwiches project which was inspiration for the get_name and check_name functions.
-- [Real Python](https://realpython.com/python-sort/) and [DelftStack](https://www.delftstack.com/howto/python/sort-list-of-lists-in-python/) with help on sorting.
-- [Geeks For Geeks](https://www.geeksforgeeks.org/python-get-first-and-last-elements-of-a-list/) and [Career Karma](https://careerkarma.com/blog/python-indexerror-list-index-out-of-range/) with help on list comprehension.
+- The initial code and styles for this project were taken from [StartBootstrap - Agency Theme](https://startbootstrap.com/theme/agency), then edited and expanded for my own requirements.
+- As the size of the StartBootstrap CSS file was excessive, I removed unused CSS with [Uncss Online](https://uncss-online.com/)
+- [Stack Overflow](https://stackoverflow.com) was a great source of information throughout the project but was particularly used for help with navigating to specific sections of a page [here](https://stackoverflow.com/questions/55055523/how-to-configure-django-url-to-point-to-a-specific-section-in-the-page), when setting date validation [here](https://stackoverflow.com/questions/4941974/django-how-to-set-datefield-to-only-accept-today-future-dates), for using a datepicker [here](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django) and for getting specific user information to be rendered [here](https://stackoverflow.com/questions/61232944/get-user-information-in-django-templates-and-and-checking-whether-its-equal-to).
+- [Code Institute](https://learn.codeinstitute.net/) Project 4 tutorials were consulted throughout for clarification and understanding, especially the Django Blog project from the Full Stack Frameworks tutorials which was inspiration for my models and views. Also consulted was the Bootstrap Resume part 2 from help with using Google Maps APIs
+- [Eat Sleep Wander](https://eatsleepwander.com/20-barber-review-examples-for-2021/) was used for barbershop reviews and [The Salon Business](https://thesalonbusiness.com/barbershop-slogans/) for barbershop slogans.
+- Pagination styles came from [bbbootstrap](https://bbbootstrap.com/snippets/bootstrap-awesome-round-pagination-50703662) and help with setting up pagination came from a tutorial on Youtube by [Codemy](https://www.youtube.com/watch?v=N-PB-HMFmdo).
 - The ASCII title in this project came from [Patorjk](https://patorjk.com/software/taag/#p=display&f=Standard&t=STAR%20WARS%20QUIZ)
 - Questions for the quiz have came from [Ultimate Quiz Questions](https://www.ultimatequizquestions.com/star-wars-quiz-questions/), [Radio Times](https://www.radiotimes.com/tv/sci-fi/pub-quiz-star-wars/) and [Thought Catalog](https://thoughtcatalog.com/katee-fletcher/2020/04/star-wars-trivia-questions/)
+
+### Images
+
+- All images used in this project came from [Unsplash](https://unsplash.com/)
+  - Masthead image by [Andre Reis](https://unsplash.com/@andrereispt) located [here](https://images.unsplash.com/photo-1592647420148-bfcc177e2117?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2039&q=80)
+  - Service images
+    - Gents image by [Hair Spies](https://unsplash.com/@hairspies?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+    - Shave image [Christoffer Engström](https://unsplash.com/@christoffere?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1484291150605-0860ed671f04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+    - Kids image [Jonathan Weiss](https://unsplash.com/@jweiss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+  - Team images
+    - Man 1 image by [Amir Solatani](https://unsplash.com/@swltni?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1598798918315-e954298ef4cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=410&q=80)
+    - Man 2 image by [Christian Buehner](https://unsplash.com/@christianbuehner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1617657526193-730ae0f728ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)
+    - Man 3 image by [James Barr](https://unsplash.com/@jamesoliverbarr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1588731247530-4076fc99173e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)
+    - Man 4 image by [Jessica Radanavong](https://unsplash.com/@cahh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) located [here](https://images.unsplash.com/photo-1542327897-d73f4005b533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)
+  - Locate us background image by [Andrea Donato](https://unsplash.com/@andreadonato) located [here](https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)
+- All images were reduced in size using [Birme.net](https://www.birme.net/) and [Kraken.io](https://kraken.io/web-interface)
+
+### Other Sources
+
+- All icons used came from [Font Awesome](https://fontawesome.com/)
+- All fonts used came from [Google Fonts](https://fonts.google.com/)
+- [Google Maps API](https://console.cloud.google.com/google/maps-apis/) used for the map in the locate us section and the tutorial on Map Markers can be found [here](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
+- [Cloudinary](https://cloudinary.com) used for serving static files and resources
+- Favicon icon created by [Favicon.io](https://favicon.io/emoji-favicons/scissors)
+- Mockup image created by [Am I Responsive](https://ui.dev/amiresponsive)
 
 ### Special Thanks
 
