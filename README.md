@@ -231,7 +231,7 @@ I have manually tested this project in the following ways:
     - Create 3 new folders on the top level directory (static, media and templates)
     - Create Procfile on the top level directory
   - In Procfile
-    - Add code web: gunicorn scissorhands.wsgi
+    - Add code web: gunicorn PROJ_NAME.wsgi
   - In the termimal
     - Add, Commit and Push
       - git add .
@@ -253,8 +253,7 @@ I have manually tested this project in the following ways:
 - [Code Institute](https://learn.codeinstitute.net/) Project 4 tutorials were consulted throughout for clarification and understanding, especially the Django Blog project from the Full Stack Frameworks tutorials which was inspiration for my models and views. Also consulted was the Bootstrap Resume part 2 from help with using Google Maps APIs
 - [Eat Sleep Wander](https://eatsleepwander.com/20-barber-review-examples-for-2021/) was used for barbershop reviews and [The Salon Business](https://thesalonbusiness.com/barbershop-slogans/) for barbershop slogans.
 - Pagination styles came from [bbbootstrap](https://bbbootstrap.com/snippets/bootstrap-awesome-round-pagination-50703662) and help with setting up pagination came from a tutorial on Youtube by [Codemy](https://www.youtube.com/watch?v=N-PB-HMFmdo).
-- The ASCII title in this project came from [Patorjk](https://patorjk.com/software/taag/#p=display&f=Standard&t=STAR%20WARS%20QUIZ)
-- Questions for the quiz have came from [Ultimate Quiz Questions](https://www.ultimatequizquestions.com/star-wars-quiz-questions/), [Radio Times](https://www.radiotimes.com/tv/sci-fi/pub-quiz-star-wars/) and [Thought Catalog](https://thoughtcatalog.com/katee-fletcher/2020/04/star-wars-trivia-questions/)
+
 
 ### Images
 
