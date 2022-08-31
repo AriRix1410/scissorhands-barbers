@@ -109,6 +109,23 @@ The live link to this project can be found here - http://scissorhands-barbers.he
 - A feature I initially intended on implementing, is the ability to automatically confirm appointments that do not clash with other appointments. After toying with this, I decided to conduct a small research task within the barber industry and ask barbers what they would want from a booking system. Out of the 5 business I asked, 3 of them said they would prefer to manually accept bookings themselves because they have a lot of walk-ins and telephone appointments booked, so having automatic confirmation would potentially result ii double bookings with bookings taken via other means. 
 - I would like to add the ability to be able to pay for services online after bookings are confirmed.
 
+## Wireframes
+
+All wireframes have been created using [Balsamiq](https://balsamiq.com/wireframes/)
+
+- Landing Page
+ - ![Landing Page](static/assets/img/wireframes/wireframe-landing.png) 
+- Testimonials
+  - Testimonial Page
+    - ![Testimonials](static/assets/img/wireframes/wireframe-testimonial.png)
+  - Write Testimonials
+    - ![Write Testimonials](static/assets/img/wireframes/wireframe-write-testimonial.png)
+- Bookings
+  - Make A Booking
+    - ![Bookings](static/assets/img/wireframes/wireframe-make-booking.png)
+  - My Bookings
+    - ![My Bookings](static/assets/img/wireframes/wireframe-my-bookings.png)
+
 ## Agile
 
 Agile methodology was used to manage this project by breaking it up into different user stories. This was done via the Github Projects board and creating issues from a user story template. Consulting this throughout the project has helped me keep on track with what features I wanted to include and what I wanted to achieve from this project.
