@@ -48,8 +48,10 @@ The live link to this project can be found here - http://scissorhands-barbers.he
   - This section includes a photograph with text overlay to allow users to see exactly what the business is.
   - The masthead image is located on all pages to tie the full site together, I chose this image as it reflected the vintage style and branding I was trying to create for this business.
   - The landing page masthead displays a welcome message, a slogan and a button which navigates to the services section. On all other pages, this just displays the page name.
+  - If the user is logged in to the site then the welcome message greets the user, asks if the user is due another hair cut and the button navigates to the bookings page.
 
   ![Landing Page](static/assets/img/readme/landing-page.png)
+  ![Landing Page Authenticated](static/assets/img/readme/landing-page-if-logged-in.png)
 
 - __Services__
   - This section allows users to see what services are offered at this barbers and the images used reflect this.
